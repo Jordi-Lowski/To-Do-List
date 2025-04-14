@@ -1,0 +1,14 @@
+# Dependencies for To-Do List Application
+
+# Node.js environment
+node.js >= 14.0.0
+npm >= 6.0.0
+
+# Main dependencies
+electron >= 35.1.2
+electron-squirrel-startup >= 1.0.1
+
+# Frontend libraries (CDN-loaded, no installation required)
+# - SortableJS (v1.15.0)
+# - Font Awesome (v6.4.0)
+# - Google Fonts (Poppins)

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="theme-toggle">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="toggle-ball"></div>
+    </div>
+    
+    <div class="container">
+        <h1>To-Do List</h1>
+        <div class="todo-app">
+            <form id="task-form">
+                <div class="input-group">
+                    <input type="text" id="task-input" placeholder="Add a new task..." required>
+                    <button type="submit" id="add-button"><i class="fas fa-plus"></i></button>
+                </div>
+                
+                <div class="task-options">
+                    <div class="option-group">
+                        <label for="task-priority">Priority:</label>
+                        <select id="task-priority">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    
+                    <div class="option-group">
+                        <label for="task-category">Category:</label>
+                        <select id="task-category">
+                            <option value="personal">Personal</option>
+                            <option value="university">University</option>
+                            <option value="training">Training</option>
+                            <option value="work">Work</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="other" selected>Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="option-group">
+                        <label for="task-due-date">Due Date:</label>
+                        <input type="date" id="task-due-date">
+                    </div>
+                </div>
+            </form>
+            
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+                <div class="dropdown">
+                    <button class="filter-btn dropdown-toggle">Categories <i class="fas fa-caret-down"></i></button>
+                    <div class="dropdown-menu">
+                        <button class="dropdown-item" data-category="all">All Categories</button>
+                        <button class="dropdown-item" data-category="personal">Personal</button>
+                        <button class="dropdown-item" data-category="university">University</button>
+                        <button class="dropdown-item" data-category="training">Training</button>
+                        <button class="dropdown-item" data-category="work">Work</button>
+                        <button class="dropdown-item" data-category="shopping">Shopping</button>
+                        <button class="dropdown-item" data-category="other">Other</button>
+                    </div>
+                </div>
+            </div>
+            
+            <ul id="task-list" class="sortable">
+                <!-- Tasks will be added here dynamically -->
+            </ul>
+            
+            <div class="task-stats">
+                <span id="tasks-counter">0 tasks left</span>
+                <div class="task-actions">
+                    <button id="sort-tasks"><i class="fas fa-sort"></i> Sort</button>
+                    <button id="clear-completed"><i class="fas fa-trash-alt"></i> Clear Completed</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
